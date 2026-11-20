@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All invitation content (names, events, venue, contacts, countdown target, song URL) lives in `src/lib/wedding.ts`; components read from it so details change in one place.
+- Invitation styling lives in `src/invitation.css` (imported by `src/styles.css`) using plain class names mirroring the reference design; colours there are oklch tokens.
+- The envelope opening is pure CSS/SVG (clip-path flaps + keyframes timed to ~3.9s), not a video, so no third-party footage is shipped.
+- Artwork is original and served via Lovable Assets pointers in `src/assets/*.asset.json`; never copy the reference site's images, video or audio.
